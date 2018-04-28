@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://imgchr.com/i/C85ces" class="js-avatar">
+			<img src="https://s1.ax1x.com/2018/04/28/C85ces.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Brucetg</a></h1>
@@ -59,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">所有文章</a></li>
+				<li><a href="/category">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -105,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://imgchr.com/i/C85ces" class="js-avatar">
+				<img src="https://s1.ax1x.com/2018/04/28/C85ces.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Brucetg</h1>
@@ -139,7 +139,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">所有文章</a></li>
+					<li style="width: 50%"><a href="/category">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -296,22 +296,27 @@
   
   
   
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-  var cloudTieConfig = {
-    url: "http://yoursite.com/2018/04/27/hello-world/", 
-    sourceId: "hello-world",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/04/27/hello-world/",
+  owner: 'Brucetg',
+  repo: 'gitment-comments',
+  oauth: {
+    client_id: '993656f0463814b2f825',
+    client_secret: '7ca1b39a9fa334778cc530b82981c960f8a12ce8',
+  },
+})
+gitment.render('gitment-ctn')
 </script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-  
-
-  
-
-  
-
   
 
 
