@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Docker 部署 SDN（OpenDayLight） | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##1. 安装Docker，我的之前已经安装好了：    安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubunt">
+  <meta name="description" content="1. 安装Docker，我的之前已经安装好了：   安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubuntu.c">
 <meta name="keywords" content="Docker、SDN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 部署 SDN（OpenDayLight）">
 <meta property="og:url" content="http://yoursite.com/2018/04/29/Docker-部署-SDN（OpenDayLight）/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="##1. 安装Docker，我的之前已经安装好了：    安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubunt">
+<meta property="og:description" content="1. 安装Docker，我的之前已经安装好了：   安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubuntu.c">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.ax1x.com/2018/04/30/CGYaM4.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/04/30/CGY7Jf.png">
@@ -27,10 +27,10 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/04/30/CGtuY6.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/04/30/CGtKfK.md.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/04/30/CGtQSO.png">
-<meta property="og:updated_time" content="2018-04-29T16:37:46.747Z">
+<meta property="og:updated_time" content="2018-04-29T16:43:16.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 部署 SDN（OpenDayLight）">
-<meta name="twitter:description" content="##1. 安装Docker，我的之前已经安装好了：    安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubunt">
+<meta name="twitter:description" content="1. 安装Docker，我的之前已经安装好了：   安装软件包apt-transport-https，使APT系统能够被https解析 sudo apt-get install apt-transport-https    添加Docker repository key到本地keychain sudo apt-key adv --keyserver hkp://keyserver.ubuntu.c">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/04/30/CGYaM4.png">
   
   
@@ -202,8 +202,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1. 安装Docker，我的之前已经安装好了：</p>
-<p>   安装软件包apt-transport-https，使APT系统能够被https解析</p>
+        <h2 id="1-安装Docker，我的之前已经安装好了："><a href="#1-安装Docker，我的之前已经安装好了：" class="headerlink" title="1. 安装Docker，我的之前已经安装好了："></a>1. 安装Docker，我的之前已经安装好了：</h2><p>   安装软件包apt-transport-https，使APT系统能够被https解析</p>
 <pre><code>sudo apt-get install apt-transport-https
 </code></pre><p>   添加Docker repository key到本地keychain</p>
 <pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
@@ -213,21 +212,18 @@
 sudo apt-get update
 
 sudo apt-get install lxc-docker
-</code></pre><p>##2. 配置阿里云Docker镜像加速器</p>
-<p>   由于某些原因国内下载镜像速度非常慢，慢到了无法忍受的地步，那就只好另寻它法了，这里我们采用阿里云提供的Docker镜像加速器。</p>
+</code></pre><h2 id="2-配置阿里云Docker镜像加速器"><a href="#2-配置阿里云Docker镜像加速器" class="headerlink" title="2. 配置阿里云Docker镜像加速器"></a>2. 配置阿里云Docker镜像加速器</h2><p>   由于某些原因国内下载镜像速度非常慢，慢到了无法忍受的地步，那就只好另寻它法了，这里我们采用阿里云提供的Docker镜像加速器。</p>
 <p>   浏览器访问：<a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a>，打开 开发者平台 – 管理中心 – 镜像加速器 。可以看到 “您的专属加速器地址” 即 <a href="https://xxxxxxx.mirror.aliyuncs.com" target="_blank" rel="noopener">https://xxxxxxx.mirror.aliyuncs.com</a> 。</p>
 <p>   如下图所示：<br>    <img src="https://s1.ax1x.com/2018/04/30/CGYaM4.png" alt=""></p>
 <p>   按提示配置即可，速度比之前快的不要不要的。</p>
-<p>##3.下载镜像到本地（Ubuntu 14.04）:</p>
-<pre><code>sudo docker pull ubuntu:14.04
+<h2 id="3-下载镜像到本地（Ubuntu-14-04）"><a href="#3-下载镜像到本地（Ubuntu-14-04）" class="headerlink" title="3.下载镜像到本地（Ubuntu 14.04）:"></a>3.下载镜像到本地（Ubuntu 14.04）:</h2><pre><code>sudo docker pull ubuntu:14.04
 </code></pre><p>   启动Ubuntu 14.04：</p>
 <pre><code>sudo docker run -i -t ubuntu:14.04 /bin/bash
 </code></pre><p>创建的Docker镜像如果不包含ifconfig、netstat等工具，需要自行安装，执行以下命令安装即可（在docker镜像中执行）：</p>
 <pre><code>apt-get update
 
 apt-get install net-tools
-</code></pre><p>##4.安装基本依赖：</p>
-<p> 安装git：  </p>
+</code></pre><h2 id="4-安装基本依赖："><a href="#4-安装基本依赖：" class="headerlink" title="4.安装基本依赖："></a>4.安装基本依赖：</h2><p> 安装git：  </p>
 <pre><code>apt-get install git
 </code></pre><p> 安装wget：</p>
 <pre><code>apt-get install wget
@@ -258,8 +254,7 @@ export JAVA_HOME JRE_HOME PATH CLASSPATH
 </code></pre><p>  验证JDK是否安装成功： </p>
 <pre><code>java -version
 </code></pre><p>  <img src="https://s1.ax1x.com/2018/04/30/CGYqSS.png" alt=""></p>
-<p>##5.安装Maven（OpenDaylight 使用Maven进行包管理，并且要求Maven3.1.1版本以上）：</p>
-<pre><code>wget http://ftp.wayne.edu/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+<h2 id="5-安装Maven（OpenDaylight-使用Maven进行包管理，并且要求Maven3-1-1版本以上）："><a href="#5-安装Maven（OpenDaylight-使用Maven进行包管理，并且要求Maven3-1-1版本以上）：" class="headerlink" title="5.安装Maven（OpenDaylight 使用Maven进行包管理，并且要求Maven3.1.1版本以上）："></a>5.安装Maven（OpenDaylight 使用Maven进行包管理，并且要求Maven3.1.1版本以上）：</h2><pre><code>wget http://ftp.wayne.edu/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 
 tar zxvf apache-maven-3.5.2-bin.tar.gz
 
@@ -290,8 +285,7 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 <pre><code>mvn install -nsu
 </code></pre><p>  安装成功：</p>
 <p>  <img src="https://s1.ax1x.com/2018/04/30/CGtAOJ.md.png" alt=""></p>
-<p>##6.将制作好的容器打包成Docker镜像，并提交到Docker Hub</p>
-<p>  查看所有容器：</p>
+<h2 id="6-将制作好的容器打包成Docker镜像，并提交到Docker-Hub"><a href="#6-将制作好的容器打包成Docker镜像，并提交到Docker-Hub" class="headerlink" title="6.将制作好的容器打包成Docker镜像，并提交到Docker Hub"></a>6.将制作好的容器打包成Docker镜像，并提交到Docker Hub</h2><p>  查看所有容器：</p>
 <pre><code>sudo docker ps -a
 
 sudo docker commit d20d057bdfda sdn_opendaylight:1.0
