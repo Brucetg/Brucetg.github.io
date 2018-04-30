@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>kali linux 2.0下搭建DVWA渗透测试演练平台 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了 搭建步骤:1. 首先去github上下载DV">
+  <meta name="description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了">
 <meta name="keywords" content="Kali Linux、DVWA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kali linux 2.0下搭建DVWA渗透测试演练平台">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/kali-linux-2-0下搭建DVWA渗透测试演练平台/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了 搭建步骤:1. 首先去github上下载DV">
+<meta property="og:description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20161009205455128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20161009205424542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-04-29T18:20:44.210Z">
+<meta property="og:updated_time" content="2018-04-30T07:05:57.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali linux 2.0下搭建DVWA渗透测试演练平台">
-<meta name="twitter:description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了 搭建步骤:1. 首先去github上下载DV">
+<meta name="twitter:description" content="DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161009205455128?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
   
@@ -194,7 +194,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>DVWA (Dam Vulnerable Web Application)DVWA是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞，在kali linux下搭建DVWA非常方便，因为所需的apache2、mysql、php等环境在kali linux中默认已经安装好了</strong></p>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤:"></a>搭建步骤:</h2><h2 id="1-首先去github上下载DVWA的安装包，网址为：https-github-com-ethicalhack3r-DVWA"><a href="#1-首先去github上下载DVWA的安装包，网址为：https-github-com-ethicalhack3r-DVWA" class="headerlink" title="1. 首先去github上下载DVWA的安装包，网址为：https://github.com/ethicalhack3r/DVWA"></a>1. 首先去github上下载DVWA的安装包，网址为：<a href="https://github.com/ethicalhack3r/DVWA" target="_blank" rel="noopener">https://github.com/ethicalhack3r/DVWA</a></h2><h2 id="2-将下载好的压缩包解压并改名为dvwa，然后将其复制到-var-www-html-文件夹中"><a href="#2-将下载好的压缩包解压并改名为dvwa，然后将其复制到-var-www-html-文件夹中" class="headerlink" title="2. 将下载好的压缩包解压并改名为dvwa，然后将其复制到 /var/www/html  文件夹中"></a>2. 将下载好的压缩包解压并改名为dvwa，然后将其复制到 /var/www/html  文件夹中</h2><h2 id="3-打开终端，执行以下命令"><a href="#3-打开终端，执行以下命令" class="headerlink" title="3. 打开终端，执行以下命令:"></a>3. 打开终端，执行以下命令:</h2><p>   将apache2停止：</p>
+<a id="more"></a>
+<h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤:"></a>搭建步骤:</h3><h3 id="1-首先去github上下载DVWA的安装包，网址为：https-github-com-ethicalhack3r-DVWA"><a href="#1-首先去github上下载DVWA的安装包，网址为：https-github-com-ethicalhack3r-DVWA" class="headerlink" title="1. 首先去github上下载DVWA的安装包，网址为：https://github.com/ethicalhack3r/DVWA"></a>1. 首先去github上下载DVWA的安装包，网址为：<a href="https://github.com/ethicalhack3r/DVWA" target="_blank" rel="noopener">https://github.com/ethicalhack3r/DVWA</a></h3><h3 id="2-将下载好的压缩包解压并改名为dvwa，然后将其复制到-var-www-html-文件夹中"><a href="#2-将下载好的压缩包解压并改名为dvwa，然后将其复制到-var-www-html-文件夹中" class="headerlink" title="2. 将下载好的压缩包解压并改名为dvwa，然后将其复制到 /var/www/html  文件夹中"></a>2. 将下载好的压缩包解压并改名为dvwa，然后将其复制到 /var/www/html  文件夹中</h3><h3 id="3-打开终端，执行以下命令"><a href="#3-打开终端，执行以下命令" class="headerlink" title="3. 打开终端，执行以下命令:"></a>3. 打开终端，执行以下命令:</h3><p>   将apache2停止：</p>
 <pre><code>service apache2 stop
 </code></pre><p>   给dvwa文件夹相应的权限：</p>
 <pre><code>chmod -R 755 /var/www/html/dvwa
@@ -500,11 +501,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,11 +521,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
@@ -576,7 +577,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
+              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
             <li class="search-li">

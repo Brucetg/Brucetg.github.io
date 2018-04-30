@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot    重新登录即可进入系统，默认是自动登录，若想改为输入密码之后才能登陆系统，可进入System Settings中的Us">
+  <meta name="description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot">
 <meta name="keywords" content="Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot    重新登录即可进入系统，默认是自动登录，若想改为输入密码之后才能登陆系统，可进入System Settings中的Us">
+<meta property="og:description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170408092502084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20170408092511161?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-04-29T18:09:06.275Z">
+<meta property="og:updated_time" content="2018-04-30T07:08:16.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法">
-<meta name="twitter:description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot    重新登录即可进入系统，默认是自动登录，若想改为输入密码之后才能登陆系统，可进入System Settings中的Us">
+<meta name="twitter:description" content="1.Ubuntu 16.04输入正确的用户名和密码之后，不能进入桌面，仍然跳回到先前的登录界面:  解决方法: 在登陆界面按Ctrl+Alt+F1组合键，出现终端，输入用户名和密码登陆之后，然后执行: sudo rm -r ~/.Xauthority  sudo reboot">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170408092502084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
   
@@ -197,7 +197,8 @@
 <pre><code>sudo rm -r ~/.Xauthority
 
 sudo reboot
-</code></pre><p>   重新登录即可进入系统，默认是自动登录，若想改为输入密码之后才能登陆系统，可进入System Settings中的User Accounts选项中，先点击右上角的Unlock按钮，再将Automatic Login选项设为OFF即可。如下图</p>
+</code></pre><a id="more"></a>
+<p>   重新登录即可进入系统，默认是自动登录，若想改为输入密码之后才能登陆系统，可进入System Settings中的User Accounts选项中，先点击右上角的Unlock按钮，再将Automatic Login选项设为OFF即可。如下图</p>
 <p>  <img src="http://img.blog.csdn.net/20170408092502084?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
 <p>  <br></p>
 <p><img src="http://img.blog.csdn.net/20170408092511161?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
@@ -502,11 +503,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
@@ -578,7 +579,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
+              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
             <li class="search-li">

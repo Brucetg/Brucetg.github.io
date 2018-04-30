@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>PHP反序列化漏洞 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。    参考链接： http://bobao.360.cn/learning/detail/3193.html  http://blog.csdn.net/qq_32400847/article/details/53873275?readlog   PHP反序列化漏洞，">
+  <meta name="description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。">
 <meta name="keywords" content="PHP、反序列化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP反序列化漏洞">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/PHP反序列化漏洞/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。    参考链接： http://bobao.360.cn/learning/detail/3193.html  http://blog.csdn.net/qq_32400847/article/details/53873275?readlog   PHP反序列化漏洞，">
+<meta property="og:description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20171102233601617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171102233654885?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171102233741309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-04-29T17:40:30.981Z">
+<meta property="og:updated_time" content="2018-04-30T07:07:17.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP反序列化漏洞">
-<meta name="twitter:description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。    参考链接： http://bobao.360.cn/learning/detail/3193.html  http://blog.csdn.net/qq_32400847/article/details/53873275?readlog   PHP反序列化漏洞，">
+<meta name="twitter:description" content="一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20171102233601617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
@@ -195,6 +195,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>  一直以来总是觉得对PHP反序列化漏洞的理解比较模糊，今天抽时间深入学习下PHP反序列化漏洞的成因以及利用方式，在此做一个总结。</p>
+<a id="more"></a>
 <p>   参考链接：</p>
 <pre><code>http://bobao.360.cn/learning/detail/3193.html
 
@@ -683,11 +684,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,11 +704,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
@@ -759,7 +760,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
+              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
             <li class="search-li">

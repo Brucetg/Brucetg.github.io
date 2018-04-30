@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>kali Linux 64位安装python的gmpy2库报错 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。 1.执行pip install gmpy2, 报错，提示  src/gmpy.h:252:20: fatal error: mpfr.h: 没有那个文件或目录  2. 网上搜索一下，找到了解决方案：  首先从  ftp">
+  <meta name="description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。">
 <meta name="keywords" content="Kali linux、gmpy2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kali Linux 64位安装python的gmpy2库报错">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/kali-Linux-64位安装python的gmpy2库报错/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。 1.执行pip install gmpy2, 报错，提示  src/gmpy.h:252:20: fatal error: mpfr.h: 没有那个文件或目录  2. 网上搜索一下，找到了解决方案：  首先从  ftp">
+<meta property="og:description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170430202949275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20170430204541406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20170430205553891?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-04-29T18:03:51.298Z">
+<meta property="og:updated_time" content="2018-04-30T07:06:19.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali Linux 64位安装python的gmpy2库报错">
-<meta name="twitter:description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。 1.执行pip install gmpy2, 报错，提示  src/gmpy.h:252:20: fatal error: mpfr.h: 没有那个文件或目录  2. 网上搜索一下，找到了解决方案：  首先从  ftp">
+<meta name="twitter:description" content="前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170430202949275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
   
@@ -195,6 +195,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>  前段时间 网上找了个解密RSA的Python脚本，兴高采烈地拿到Kali Linux中跑一下，然后提示没安装gmpy2这个库，接下来就遇到了一系列小的问题，大概说一下解决办法。</p>
+<a id="more"></a>
 <h2 id="1-执行pip-install-gmpy2-报错，提示-src-gmpy-h-252-20-fatal-error-mpfr-h-没有那个文件或目录"><a href="#1-执行pip-install-gmpy2-报错，提示-src-gmpy-h-252-20-fatal-error-mpfr-h-没有那个文件或目录" class="headerlink" title="1.执行pip install gmpy2, 报错，提示  src/gmpy.h:252:20: fatal error: mpfr.h: 没有那个文件或目录"></a>1.执行pip install gmpy2, 报错，提示  src/gmpy.h:252:20: fatal error: mpfr.h: 没有那个文件或目录</h2><p><br></p>
 <p><img src="http://img.blog.csdn.net/20170430202949275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuenQxMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
 <h2 id="2-网上搜索一下，找到了解决方案："><a href="#2-网上搜索一下，找到了解决方案：" class="headerlink" title="2. 网上搜索一下，找到了解决方案："></a>2. 网上搜索一下，找到了解决方案：</h2><p>  首先从  <a href="ftp://ftp.gnu.org/gnu/mpfr/" target="_blank" rel="noopener">ftp://ftp.gnu.org/gnu/mpfr/</a>   下载最新的mpfr的压缩包，这里我下载的是mpfr-3.1.5.zip</p>
@@ -522,11 +523,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +543,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
@@ -598,7 +599,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
+              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
             <li class="search-li">

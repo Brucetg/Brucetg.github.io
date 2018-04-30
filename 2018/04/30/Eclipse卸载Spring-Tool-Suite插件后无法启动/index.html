@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Eclipse卸载Spring Tool Suite插件后无法启动 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志： !ENTRY org.eclipse.osgi 4 0 2017-10-06 13:33:49.046!MESSAGE Application erro">
+  <meta name="description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志：">
 <meta name="keywords" content="Eclipse Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eclipse卸载Spring Tool Suite插件后无法启动">
 <meta property="og:url" content="http://yoursite.com/2018/04/30/Eclipse卸载Spring-Tool-Suite插件后无法启动/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志： !ENTRY org.eclipse.osgi 4 0 2017-10-06 13:33:49.046!MESSAGE Application erro">
+<meta property="og:description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-29T17:44:33.730Z">
+<meta property="og:updated_time" content="2018-04-30T07:04:49.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse卸载Spring Tool Suite插件后无法启动">
-<meta name="twitter:description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志： !ENTRY org.eclipse.osgi 4 0 2017-10-06 13:33:49.046!MESSAGE Application erro">
+<meta name="twitter:description" content="###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志：">
   
   
     <link rel="icon" href="/favicon.png">
@@ -191,6 +191,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>###前段时间为了做课设给Eclipse安装了Spring Tool Suite插件，越来越觉得Eclipse装了太多插件启动有点慢，就把Spring Tool Suite插件卸载了，然后重启Eclipse，发现无法正常启动，以下为部分错误日志：</p>
+<a id="more"></a>
 <p>!ENTRY org.eclipse.osgi 4 0 2017-10-06 13:33:49.046<br>!MESSAGE Application error<br>!STACK 1<br>java.lang.RuntimeException: Application “” could not be found in the registry. The applications available are: org.eclipse.ant.core.antRunner, org.eclipse.ant.ui.antRunner, org.eclipse.datatools.connectivity.console.profile.StorageFileEditor, org.eclipse.e4.ui.workbench.swt.E4Application, org.eclipse.e4.ui.workbench.swt.GenTopic, org.eclipse.emf.codegen.CodeGen, org.eclipse.emf.codegen.JMerger, org.eclipse.emf.codegen.ecore.Generator, org.eclipse.emf.importer.ecore.Ecore2GenModel, org.eclipse.emf.importer.java.Java2GenModel, org.eclipse.emf.importer.rose.Rose2GenModel, org.eclipse.equinox.app.error, org.eclipse.equinox.p2.director, org.eclipse.equinox.p2.garbagecollector.application, org.eclipse.equinox.p2.publisher.InstallPublisher, org.eclipse.equinox.p2.publisher.EclipseGenerator, org.eclipse.equinox.p2.publisher.ProductPublisher, org.eclipse.equinox.p2.publisher.FeaturesAndBundlesPublisher, org.eclipse.equinox.p2.reconciler.application, org.eclipse.equinox.p2.repository.repo2runnable, org.eclipse.equinox.p2.repository.metadataverifier, org.eclipse.equinox.p2.artifact.repository.mirrorApplication, org.eclipse.equinox.p2.metadata.repository.mirrorApplication, org.eclipse.equinox.p2.touchpoint.natives.nativePackageExtractor, org.eclipse.equinox.p2.updatesite.UpdateSitePublisher, org.eclipse.equinox.p2.publisher.UpdateSitePublisher, org.eclipse.equinox.p2.publisher.CategoryPublisher, org.eclipse.help.base.infocenterApplication, org.eclipse.help.base.helpApplication, org.eclipse.help.base.indexTool, org.eclipse.jdt.apt.core.aptBuild, org.eclipse.jdt.core.JavaCodeFormatter, org.eclipse.jdt.core.JavaIndexer, org.eclipse.oomph.setup.core.SetupArchiver, org.eclipse.pde.build.Build, org.eclipse.pde.junit.runtime.uitestapplication, org.eclipse.pde.junit.runtime.legacytestapplication, org.eclipse.pde.junit.runtime.coretestapplication, org.eclipse.pde.junit.runtime.coretestapplicationnonmain, org.eclipse.pde.junit.runtime.nonuithreadtestapplication, org.eclipse.ui.ide.workbench, org.eclipse.wst.jsdt.core.JavaCodeFormatter, org.eclipse.wst.server.preview.preview.<br>at org.eclipse.equinox.internal.app.EclipseAppContainer.startDefaultApp(EclipseAppContainer.java:248)<br>at org.eclipse.equinox.internal.app.MainApplicationLauncher.run(MainApplicationLauncher.java:29)<br>at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)<br>at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)<br>at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)<br>at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)<br>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>at java.lang.reflect.Method.invoke(Method.java:498)<br>at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)<br>at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)<br>at org.eclipse.equinox.launcher.Main.run(Main.java:1519)<br>at org.eclipse.equinox.launcher.Main.main(Main.java:1492)</p>
 <p><br></p>
 <h3 id="然后就在网上找解决这个问题的方法，还真找到了合适的方法，具体方法如下："><a href="#然后就在网上找解决这个问题的方法，还真找到了合适的方法，具体方法如下：" class="headerlink" title="然后就在网上找解决这个问题的方法，还真找到了合适的方法，具体方法如下："></a>然后就在网上找解决这个问题的方法，还真找到了合适的方法，具体方法如下：</h3><p>  eclipse所在目录/configuration/config.ini，</p>
@@ -491,11 +492,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +512,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ubuntu、fbctf</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
@@ -567,7 +568,7 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
+              <a href="https://blog.csdn.net/wanzt123" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
             </li>
           
             <li class="search-li">
