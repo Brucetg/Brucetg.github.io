@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>DirtyCow（脏牛）漏洞复现 | Brucetg&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP 该漏洞是 Linux 内核的内存子系统在">
+  <meta name="description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP">
 <meta name="keywords" content="CVE-2016-5195">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DirtyCow（脏牛）漏洞复现">
 <meta property="og:url" content="http://yoursite.com/2018/05/27/DirtyCow（脏牛）漏洞复现/index.html">
 <meta property="og:site_name" content="Brucetg&#39;s Blog">
-<meta property="og:description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP 该漏洞是 Linux 内核的内存子系统在">
+<meta property="og:description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/27/ChB3md.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/27/ChBGTI.png">
@@ -43,10 +43,10 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/27/Chr4oR.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/27/ChroJx.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/05/27/ChrqyD.png">
-<meta property="og:updated_time" content="2018-05-27T08:14:15.182Z">
+<meta property="og:updated_time" content="2018-05-27T08:20:05.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DirtyCow（脏牛）漏洞复现">
-<meta name="twitter:description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP 该漏洞是 Linux 内核的内存子系统在">
+<meta name="twitter:description" content="该文章首发于： 90sec(九零)  文章链接: https://forum.90sec.com/t/topic/521 这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。    编译好的EXP下载地址： https://github.com/Brucetg/DirtyCow-EXP">
 <meta name="twitter:image" content="https://s1.ax1x.com/2018/05/27/ChB3md.png">
   
   
@@ -221,6 +221,7 @@
         <p><strong>该文章首发于： 90sec(九零)  文章链接: <a href="https://forum.90sec.com/t/topic/521" target="_blank" rel="noopener">https://forum.90sec.com/t/topic/521</a></strong></p>
 <p><strong>这几天发现90sec需要登录才能浏览文章，为了方便就把该文章也发在个人博客，并顺便把之前编译好的脏牛提权EXP也一块放出来。</strong> </p>
 <p>  编译好的EXP下载地址： <a href="https://github.com/Brucetg/DirtyCow-EXP" target="_blank" rel="noopener">https://github.com/Brucetg/DirtyCow-EXP</a></p>
+<a id="more"></a>
 <p>该漏洞是 Linux 内核的内存子系统在处理写时拷贝（Copy-on-Write）时存在条件竞争漏洞， 导致可以破坏私有只读内存映射。黑客可以在获取低权限的的本地用户后，利用此漏洞获取 其他只读内存映射的写权限，进一步获取 root 权限。 </p>
 <h2 id="1-Linux"><a href="#1-Linux" class="headerlink" title="1.Linux"></a>1.Linux</h2><p><strong>Ubuntu 14.04 :</strong> </p>
 <p>1）添加用户： </p>
@@ -638,6 +639,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Docker、SDN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Kali Linux、mysql-sniffer</a>
               </li>
              
@@ -650,15 +659,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Docker、SDN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Eclipse Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反弹shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">Kali linux、gmpy2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,11 +671,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
+                <a href="javascript:void(0)" class="js-tag color3">反弹shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kali linux、gmpy2</a>
+                <a href="javascript:void(0)" class="js-tag color2">Windows、cmd</a>
               </li>
             
             <div class="clearfix"></div>
